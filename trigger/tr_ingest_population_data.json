@@ -1,0 +1,24 @@
+{
+	"name": "tr_ingest_population_data",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_population_data",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/population/blobs/population_by_age",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/6f7b3106-ff24-4281-a277-fcf79ec653de/resourceGroups/covid-reporting-og/providers/Microsoft.Storage/storageAccounts/ashcovidreporting",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

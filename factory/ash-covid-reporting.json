@@ -1,0 +1,9 @@
+{
+	"name": "ash-covid-reporting",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6e691ab6-105d-4a1f-93a3-bf56da029064",
+		"tenantId": "80148ddb-737e-4256-8900-466fc4bb2149"
+	}
+}
