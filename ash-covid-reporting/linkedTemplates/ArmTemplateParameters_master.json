@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ash-covid-reporting"
+		},
+		"ls_ablob_covidreportingdl_accountKey": {
+			"value": ""
+		},
+		"ls_ablob_covidreportingsa_connectionString": {
+			"value": ""
+		},
+		"ls_covid_hdi_testing_clusterPassword": {
+			"value": ""
+		},
+		"ls_covid_hdi_testing_clusterSshPassword": {
+			"value": ""
+		},
+		"ls_covid_hdi_testing_servicePrincipalKey": {
+			"value": ""
+		},
+		"ls_sql_covid_db_connectionString": {
+			"value": ""
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "@{linkedService().sourceBaseURL}"
+		},
+		"ls_ablob_covidreportingdl_properties_typeProperties_url": {
+			"value": "https://ashcovidreportinglake.dfs.core.windows.net/"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_hostSubscriptionId": {
+			"value": "6f7b3106-ff24-4281-a277-fcf79ec653de"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_clusterResourceGroup": {
+			"value": "covid-reporting-og"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_servicePrincipalId": {
+			"value": "adm"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_tenant": {
+			"value": "80148ddb-737e-4256-8900-466fc4bb2149"
+		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"value": "/subscriptions/6f7b3106-ff24-4281-a277-fcf79ec653de/resourceGroups/covid-reporting-og/providers/Microsoft.Storage/storageAccounts/ashcovidreporting"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
