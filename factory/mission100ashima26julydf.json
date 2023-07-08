@@ -1,0 +1,9 @@
+{
+	"name": "mission100ashima26julydf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bfa09832-bd49-4212-ab4c-1d3735b28a72",
+		"tenantId": "34bd8bed-2ac1-41ae-9f08-4e0a3f11706c"
+	}
+}
