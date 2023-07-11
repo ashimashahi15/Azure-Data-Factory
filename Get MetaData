@@ -1,0 +1,11 @@
+To get the list of the files or folders from a specific location in Azure blob storage, use the following steps:
+Go to the data factory and create one pipeline.
+Create a linked service which will point to the Azure blob storage location.
+Create a dataset for Azure blob storage using the linked service created in above steps.
+Go to the activity search box and type getmetadata. In the results section you will see getmetadata activity. Drag and drop this activity into the pipeline designer tab.
+Select getmetadata activity and go to the dataset tab. Under the dataset tab you will see  the field dataset there.
+Select the dataset which we have created in above step to connect to the Azure blob storage.
+Scroll down and there you will see the attribute field list. In front of it you will see a plus sign click on it. 
+Drop down box will appear, in this drop down box you will see multiple properties.
+Here for now just select the child items as we wanted to select all the list of file names and folder names available inside the folder location.
+This will return the list of all the folders and files available inside our pointed location along with their type.
