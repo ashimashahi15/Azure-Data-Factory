@@ -1,0 +1,17 @@
+{
+	"name": "SQlDB_AKV_LS",
+	"properties": {
+		"annotations": [],
+		"type": "AzureMySql",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AKV_LS",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sqldbpass"
+			}
+		}
+	}
+}
