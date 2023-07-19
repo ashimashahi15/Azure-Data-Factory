@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://www.ncbi.nlm.nih.gov/dbvar/studies/nstd186/download/?type=i",
+			"url": "https://genomics.senescence.info/longevity/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
