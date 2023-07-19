@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://genomics.senescence.info/longevity/",
+			"url": "https://genomics.senescence.info/longevity/longevity_genes.zip",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
