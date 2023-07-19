@@ -1,0 +1,42 @@
+{
+	"name": "Genomics_adls_Ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL_DB_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Association",
+				"type": "varchar"
+			},
+			{
+				"name": "Population",
+				"type": "varchar"
+			},
+			{
+				"name": "Variants",
+				"type": "varchar"
+			},
+			{
+				"name": "Genes",
+				"type": "varchar"
+			},
+			{
+				"name": "PubMed",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "longevity"
+		}
+	}
+}
