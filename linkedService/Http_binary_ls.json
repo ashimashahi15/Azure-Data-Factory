@@ -1,0 +1,12 @@
+{
+	"name": "Http_binary_ls",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://www.kaggle.com/datasets/aliabedimadiseh/human-genome-dataset/download?datasetVersionNumber=1",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
