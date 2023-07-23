@@ -1,0 +1,23 @@
+{
+	"name": "adls_binary2_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_binary1_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "4f885dc2-a4fb-4d5d-b593-df07997fbb96",
+				"folderPath": "newKaaggle",
+				"fileSystem": "landing"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Optimal"
+			}
+		}
+	}
+}
