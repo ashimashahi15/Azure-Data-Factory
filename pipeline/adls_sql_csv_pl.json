@@ -1,0 +1,258 @@
+{
+	"name": "adls_sql_csv_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy csv data from adls to sql db",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_description",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_description",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_nibPath",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_nibPath",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_organism",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_organism",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_defaultPos",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_defaultPos",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_active",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_active",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_orderKey",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_orderKey",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_genome",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_genome",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_scientificName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_scientificName",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_htmlPath",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_htmlPath",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_hgNearOk",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_hgNearOk",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_hgPbOk",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_hgPbOk",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_sourceName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_sourceName",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_ailMel1_taxId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_ailMel1_taxId",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_allMis1_description",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_allMis1_description",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_allMis1_nibPath",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_allMis1_nibPath",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ucscGenomes_allMis1_organism",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ucscGenomes_allMis1_organism",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "adls_csv_to_sql_ds",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sql_csadls_ds",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-07-24T10:26:37Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

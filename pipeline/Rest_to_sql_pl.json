@@ -1,0 +1,147 @@
+{
+	"name": "Rest_to_sql_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy from rest api to sql db",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['downloadTime']"
+								},
+								"sink": {
+									"name": "downloadTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['downloadTimeStamp']"
+								},
+								"sink": {
+									"name": "downloadTimeStamp"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dataTime']"
+								},
+								"sink": {
+									"name": "dataTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dataTimeStamp']"
+								},
+								"sink": {
+									"name": "dataTimeStamp"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['hubUrl']"
+								},
+								"sink": {
+									"name": "hubUrl"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['shortLabel']"
+								},
+								"sink": {
+									"name": "shortLabel"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['longLabel']"
+								},
+								"sink": {
+									"name": "longLabel"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['registrationTime']"
+								},
+								"sink": {
+									"name": "registrationTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['dbCount']"
+								},
+								"sink": {
+									"name": "dbCount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['dbList']"
+								},
+								"sink": {
+									"name": "dbList"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['descriptionUrl']"
+								},
+								"sink": {
+									"name": "descriptionUrl"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "restapi_sql_ds",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "rest_sql_ds",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-07-24T07:16:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

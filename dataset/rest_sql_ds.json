@@ -1,0 +1,17 @@
+{
+	"name": "rest_sql_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rest_to_sql_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "datatable.csv"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,13 @@
+{
+	"name": "Binary_LS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://ftp.ncbi.nlm.nih.gov/toolbox/gbench/samples/vcf/GCA_000001215.4_current_ids.vcf.gz",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
