@@ -1,0 +1,77 @@
+{
+	"name": "derived_column_dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "adls2_csv_ds",
+						"type": "DatasetReference"
+					},
+					"name": "geneticsData"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "genetics_refined_ds",
+						"type": "DatasetReference"
+					},
+					"name": "GeneticsRefinedData"
+				}
+			],
+			"transformations": [
+				{
+					"name": "NewColumnsAdded",
+					"description": "Implemented CurrentDate, HData, Columns Merging, removing Null values"
+				},
+				{
+					"name": "SelectedColumnsOnly"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          {Sample name} as string,",
+				"          Sex as string,",
+				"          {Biosample ID} as string,",
+				"          {Population code} as string,",
+				"          {Population name} as string,",
+				"          {Superpopulation code} as string,",
+				"          {Superpopulation name} as string,",
+				"          {Population elastic ID} as string,",
+				"          {Data collections} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> geneticsData",
+				"geneticsData derive({Id with Name} = {Biosample ID}+ \" \" + {Sample name},",
+				"          {Without Null Values} = iifNull({Sample name}, Sex,{Biosample ID}),",
+				"          Date = currentDate(),",
+				"          HData = @({Population Code}={Population code},",
+				"          {superpopulation Code}={Superpopulation code})) ~> NewColumnsAdded",
+				"NewColumnsAdded select(mapColumn(",
+				"          {Sample name},",
+				"          Sex,",
+				"          {Biosample ID},",
+				"          {Population code},",
+				"          {Superpopulation code},",
+				"          {Population elastic ID},",
+				"          Date",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelectedColumnsOnly",
+				"SelectedColumnsOnly sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> GeneticsRefinedData"
+			]
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "genetics_refined_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GeneticsRefined_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TransformedData"
+		}
+	}
+}

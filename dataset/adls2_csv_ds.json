@@ -1,0 +1,30 @@
+{
+	"name": "adls2_csv_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls2_csv_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "igsr_samples.tsv",
+				"folderPath": "vcfdata",
+				"fileSystem": "landing"
+			},
+			"columnDelimiter": "\t",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Sample name\tSex\tBiosample ID\tPopulation code\tPopulation name\tSuperpopulation code\tSuperpopulation name\tPopulation elastic ID\tData collections",
+				"type": "String"
+			}
+		]
+	}
+}
