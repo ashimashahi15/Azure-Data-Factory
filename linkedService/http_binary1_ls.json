@@ -1,0 +1,12 @@
+{
+	"name": "http_binary1_ls",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://www.proteinatlas.org/download/normal_tissue.tsv.zip",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
