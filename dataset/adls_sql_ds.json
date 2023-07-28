@@ -1,0 +1,21 @@
+{
+	"name": "adls_sql_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_json_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "data_a57c7eaa-332d-44fd-8567-04ae78ab33e1_c6aa145a-4e9c-4cff-9429-3aa0d9e8bcf4.json",
+				"folderPath": "Restdata",
+				"fileSystem": "landing"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

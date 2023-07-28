@@ -1,0 +1,17 @@
+{
+	"name": "sql_csadls_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_csv_adls_la",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "csvdata"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

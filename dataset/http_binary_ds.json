@@ -1,0 +1,21 @@
+{
+	"name": "http_binary_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "http_binary_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			},
+			"compression": {
+				"type": "gzip",
+				"level": "Optimal"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

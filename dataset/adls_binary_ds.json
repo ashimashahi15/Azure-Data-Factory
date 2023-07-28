@@ -1,0 +1,19 @@
+{
+	"name": "adls_binary_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_bin_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "vcfdata",
+				"fileSystem": "landing"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

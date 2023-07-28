@@ -1,0 +1,13 @@
+{
+	"name": "restapi_sql_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Rest_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

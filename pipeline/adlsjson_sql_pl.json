@@ -1,0 +1,117 @@
+{
+	"name": "adlsjson_sql_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy datat from adls json to sql db",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['hubUrl']"
+								},
+								"sink": {
+									"name": "hubUrl"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['shortLabel']"
+								},
+								"sink": {
+									"name": "shortLabel"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['longLabel']"
+								},
+								"sink": {
+									"name": "longLabel"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['registrationTime']"
+								},
+								"sink": {
+									"name": "registrationTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['dbCount']"
+								},
+								"sink": {
+									"name": "dbCount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['dbList']"
+								},
+								"sink": {
+									"name": "dbList"
+								}
+							},
+							{
+								"source": {
+									"path": "$['publicHubs'][0]['descriptionUrl']"
+								},
+								"sink": {
+									"name": "descriptionUrl"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "adls_sql_ds",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "adls_to_sql_ds",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-07-24T10:02:06Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
