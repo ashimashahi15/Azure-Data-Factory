@@ -71,6 +71,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'gen1_ls'"
 		},
+		"humanTissue_ls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'humanTissue_ls'"
+		},
+		"human_tissue_df_ls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'human_tissue_df_ls'"
+		},
 		"ls_ablob_covidreportingdl_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_ablob_covidreportingdl'"
@@ -179,9 +187,21 @@
 			"type": "string",
 			"defaultValue": "https://ashima26julyadls.dfs.core.windows.net/"
 		},
+		"http_binary1_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.proteinatlas.org/download/normal_tissue.tsv.zip"
+		},
 		"http_binary_ls_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_clinvar.vcf.gz"
+		},
+		"humanTissue_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"human_tissue_df_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ashima26julyadls.dfs.core.windows.net/"
 		},
 		"ls_ablob_covidreportingdl_properties_typeProperties_url": {
 			"type": "string",
@@ -357,6 +377,12 @@
 					"gen1_ls_accountKey": {
 						"value": "[parameters('gen1_ls_accountKey')]"
 					},
+					"humanTissue_ls_accountKey": {
+						"value": "[parameters('humanTissue_ls_accountKey')]"
+					},
+					"human_tissue_df_ls_accountKey": {
+						"value": "[parameters('human_tissue_df_ls_accountKey')]"
+					},
 					"ls_ablob_covidreportingdl_accountKey": {
 						"value": "[parameters('ls_ablob_covidreportingdl_accountKey')]"
 					},
@@ -384,8 +410,17 @@
 					"gen1_ls_properties_typeProperties_url": {
 						"value": "[parameters('gen1_ls_properties_typeProperties_url')]"
 					},
+					"http_binary1_ls_properties_typeProperties_url": {
+						"value": "[parameters('http_binary1_ls_properties_typeProperties_url')]"
+					},
 					"http_binary_ls_properties_typeProperties_url": {
 						"value": "[parameters('http_binary_ls_properties_typeProperties_url')]"
+					},
+					"humanTissue_ls_properties_typeProperties_url": {
+						"value": "[parameters('humanTissue_ls_properties_typeProperties_url')]"
+					},
+					"human_tissue_df_ls_properties_typeProperties_url": {
+						"value": "[parameters('human_tissue_df_ls_properties_typeProperties_url')]"
 					},
 					"ls_ablob_covidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('ls_ablob_covidreportingdl_properties_typeProperties_url')]"
@@ -499,6 +534,26 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'GenomicsDF_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "GenomicsDF_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"tr_ingest_population_data_properties_typeProperties_scope": {
 						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
@@ -506,7 +561,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'GenomicsDF_ArmTemplate_4')]"
+				"[resourceId('Microsoft.Resources/deployments', 'GenomicsDF_ArmTemplate_5')]"
 			]
 		}
 	]

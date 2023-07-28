@@ -53,6 +53,12 @@
 		"gen1_ls_accountKey": {
 			"value": ""
 		},
+		"humanTissue_ls_accountKey": {
+			"value": ""
+		},
+		"human_tissue_df_ls_accountKey": {
+			"value": ""
+		},
 		"ls_ablob_covidreportingdl_accountKey": {
 			"value": ""
 		},
@@ -134,8 +140,17 @@
 		"gen1_ls_properties_typeProperties_url": {
 			"value": "https://ashima26julyadls.dfs.core.windows.net/"
 		},
+		"http_binary1_ls_properties_typeProperties_url": {
+			"value": "https://www.proteinatlas.org/download/normal_tissue.tsv.zip"
+		},
 		"http_binary_ls_properties_typeProperties_url": {
 			"value": "https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_clinvar.vcf.gz"
+		},
+		"humanTissue_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"human_tissue_df_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
 		},
 		"ls_ablob_covidreportingdl_properties_typeProperties_url": {
 			"value": "https://ashcovidreportinglake.dfs.core.windows.net/"
