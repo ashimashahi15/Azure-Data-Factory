@@ -1,0 +1,30 @@
+{
+	"name": "human_tissue_df_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "human_tissue_df_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "normal_tissue.tsv",
+				"folderPath": "humanProtein/18d0b151-1ef2-4eff-9b0f-675a9897a923",
+				"fileSystem": "landing"
+			},
+			"columnDelimiter": "\t",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Gene\tGene name\tTissue\tCell type\tLevel\tReliability",
+				"type": "String"
+			}
+		]
+	}
+}

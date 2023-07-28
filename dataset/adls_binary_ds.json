@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "vcfdata",
+				"folderPath": "humanProtein",
 				"fileSystem": "landing"
 			}
 		}

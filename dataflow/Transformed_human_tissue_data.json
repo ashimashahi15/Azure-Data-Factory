@@ -1,0 +1,59 @@
+{
+	"name": "Transformed_human_tissue_data",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "human_tissue_df_ds",
+						"type": "DatasetReference"
+					},
+					"name": "HumanTissueData"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "HumanTissue_ds",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "BoneMarrowTissue"
+				},
+				{
+					"name": "aggregate1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Gene as string,",
+				"          {Gene name} as string,",
+				"          Tissue as string,",
+				"          {Cell type} as string,",
+				"          Level as string,",
+				"          Reliability as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> HumanTissueData",
+				"HumanTissueData filter(Tissue !='cervix' && {Cell type} == 'glandular cells') ~> BoneMarrowTissue",
+				"BoneMarrowTissue aggregate(groupBy(Tissue),",
+				"     {Gene name} = count({Gene name})) ~> aggregate1",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['output'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}

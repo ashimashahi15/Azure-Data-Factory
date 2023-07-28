@@ -1,0 +1,24 @@
+{
+	"name": "HumanTissue_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "humanTissue_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "output",
+				"folderPath": "humanProtein/18d0b151-1ef2-4eff-9b0f-675a9897a923",
+				"fileSystem": "landing"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
