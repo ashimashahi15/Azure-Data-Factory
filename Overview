@@ -1,5 +1,8 @@
 Overview:
-Data flows are one of the features inside the Azure Data Factory which allows data engineers to develop data transformation logic in a graphical approach without writing code. The resulting data flows can then be executed as activities within Azure Data Factory pipelines that use scaled-out Spark clusters. Your data flows will run on your own execution cluster for scaled-out data processing. ADF internally handles all the code translation, spark optimization and execution of transformation. Data flow activities can be operationalized via the existing Data Factory scheduling, control, flow, and monitoring capabilities.
+Data flows are one of the features inside the Azure Data Factory which allows data engineers to develop data transformation logic in a graphical approach 
+without writing code. The resulting data flows can then be executed as activities within Azure Data Factory pipelines that use scaled-out Spark clusters. 
+Your data flows will run on your own execution cluster for scaled-out data processing. ADF internally handles all the code translation, spark optimization
+and execution of the transformation. Data flow activities can be operationalized via the existing Data Factory scheduling, control, flow, and monitoring capabilities.
 
 There are two types of Data flows:
 
@@ -9,11 +12,14 @@ Wrangling Data Flow
 
 Mapping Data Flow –
 Mapping data flows are visually designed data transformations in Azure Data Factory.
-When there is a situation like you need to perform transformations using two or more datasets then you use a Mapping data flow.
+When there is a situation where you need to perform transformations using two or more datasets then you use a Mapping data flow.
 You can perform several transformations such as Filter, JOIN, Aggregate, Union, Lookup, Sort, etc using mapping data flows.
 Mapping data flows can be executed within ADF pipelines using data flow activities.
 Azure Data Factory handles the code transformation and execution of Mapping Data Flow behind the scenes.
 Mapping Data Flows activity can be created individually or within an Azure Data Factory pipeline.
 
 Wrangling Data Flow
-Wrangling Data Flow uses the M query language and the Power Query Editor's UI. The developer can use the graphical user interface to handle all the tedious tasks with little to no coding using wrangling data flows. However, all the UI actions are transformed to the M language in the background. Azure Data Factory will convert the M code to Spark at runtime, running your data flow against large data clusters. This implies that you should expect consistent performance as your data volumes increase.
+Wrangling Data Flow uses the M query language and the Power Query Editor's UI. The developer can use the graphical user interface to handle all the 
+tedious tasks with little to no coding using wrangling data flows. However, all the UI actions are transformed to the M language in the background. 
+Azure Data Factory will convert the M code to Spark at runtime, running your data flow against large data clusters. This implies that you should expect
+consistent performance as your data volumes increase.
