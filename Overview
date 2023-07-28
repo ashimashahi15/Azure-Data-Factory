@@ -4,6 +4,8 @@ without writing code. The resulting data flows can then be executed as activitie
 Your data flows will run on your own execution cluster for scaled-out data processing. ADF internally handles all the code translation, spark optimization
 and execution of the transformation. Data flow activities can be operationalized via the existing Data Factory scheduling, control, flow, and monitoring capabilities.
 
+
+
 There are two types of Data flows:
 
 Mapping Data Flow
@@ -23,3 +25,4 @@ Wrangling Data Flow uses the M query language and the Power Query Editor's UI. T
 tedious tasks with little to no coding using wrangling data flows. However, all the UI actions are transformed to the M language in the background. 
 Azure Data Factory will convert the M code to Spark at runtime, running your data flow against large data clusters. This implies that you should expect
 consistent performance as your data volumes increase.
+
