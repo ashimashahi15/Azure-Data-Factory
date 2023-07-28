@@ -1,0 +1,168 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "GenomicsDF"
+		},
+		"ADLS_LS_accountKey": {
+			"value": ""
+		},
+		"GeneticsRefined_ls_connectionString": {
+			"value": ""
+		},
+		"SQL_DB_LS_connectionString": {
+			"value": ""
+		},
+		"adls2_csv_ls_accountKey": {
+			"value": ""
+		},
+		"adls_bin_ls_accountKey": {
+			"value": ""
+		},
+		"adls_binary_ls_accountKey": {
+			"value": ""
+		},
+		"adls_csv_ls_accountKey": {
+			"value": ""
+		},
+		"adls_csv_sql_ls_accountKey": {
+			"value": ""
+		},
+		"adls_csv_to_sql_ls_accountKey": {
+			"value": ""
+		},
+		"adls_json_ls_accountKey": {
+			"value": ""
+		},
+		"adls_rest_ls_accountKey": {
+			"value": ""
+		},
+		"adls_sql_Ls_connectionString": {
+			"value": ""
+		},
+		"adls_to_sql_ls_connectionString": {
+			"value": ""
+		},
+		"adls_vcf_csv_ls_accountKey": {
+			"value": ""
+		},
+		"blob_binary_ls_connectionString": {
+			"value": ""
+		},
+		"gen1_ls_accountKey": {
+			"value": ""
+		},
+		"ls_ablob_covidreportingdl_accountKey": {
+			"value": ""
+		},
+		"ls_ablob_covidreportingsa_connectionString": {
+			"value": ""
+		},
+		"ls_covid_hdi_testing_clusterPassword": {
+			"value": ""
+		},
+		"ls_covid_hdi_testing_clusterSshPassword": {
+			"value": ""
+		},
+		"ls_covid_hdi_testing_servicePrincipalKey": {
+			"value": ""
+		},
+		"ls_sql_covid_db_connectionString": {
+			"value": ""
+		},
+		"rest_adls_json_ls_accountKey": {
+			"value": ""
+		},
+		"rest_to_sql_ls_connectionString": {
+			"value": ""
+		},
+		"sql_csv_adls_la_connectionString": {
+			"value": ""
+		},
+		"vcf_adls_ds_accountKey": {
+			"value": ""
+		},
+		"vcf_csv_ls_accountKey": {
+			"value": ""
+		},
+		"ADLS_LS_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"Binary_LS_properties_typeProperties_url": {
+			"value": "https://ftp.ncbi.nlm.nih.gov/toolbox/gbench/samples/vcf/GCA_000001215.4_current_ids.vcf.gz"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "@{linkedService().sourceBaseURL}"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://api.genome.ucsc.edu/list/"
+		},
+		"Rest_ls_properties_typeProperties_url": {
+			"value": "https://api.genome.ucsc.edu/list/publicHubs"
+		},
+		"XML_LS_properties_typeProperties_url": {
+			"value": "https://covid-19.ensembl.org/info/data/index.html"
+		},
+		"adls2_csv_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"adls_bin_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"adls_binary_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"adls_csv_ls_properties_typeProperties_url": {
+			"value": "https://geneticsfordna.dfs.core.windows.net/"
+		},
+		"adls_csv_sql_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"adls_csv_to_sql_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"adls_json_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"adls_rest_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"adls_vcf_csv_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"gen1_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"http_binary_ls_properties_typeProperties_url": {
+			"value": "https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_clinvar.vcf.gz"
+		},
+		"ls_ablob_covidreportingdl_properties_typeProperties_url": {
+			"value": "https://ashcovidreportinglake.dfs.core.windows.net/"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_hostSubscriptionId": {
+			"value": "6f7b3106-ff24-4281-a277-fcf79ec653de"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_clusterResourceGroup": {
+			"value": "covid-reporting-og"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_servicePrincipalId": {
+			"value": "adm"
+		},
+		"ls_covid_hdi_testing_properties_typeProperties_tenant": {
+			"value": "80148ddb-737e-4256-8900-466fc4bb2149"
+		},
+		"rest_adls_json_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"vcf_adls_ds_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"vcf_csv_ls_properties_typeProperties_url": {
+			"value": "https://ashima26julyadls.dfs.core.windows.net/"
+		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"value": "/subscriptions/6f7b3106-ff24-4281-a277-fcf79ec653de/resourceGroups/covid-reporting-og/providers/Microsoft.Storage/storageAccounts/ashcovidreporting"
+		}
+	}
+}
