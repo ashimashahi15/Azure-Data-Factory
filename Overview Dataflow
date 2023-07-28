@@ -26,3 +26,48 @@ tedious tasks with little to no coding using wrangling data flows. However, all 
 Azure Data Factory will convert the M code to Spark at runtime, running your data flow against large data clusters. This implies that you should expect
 consistent performance as your data volumes increase.
 
+Derived Column
+In Azure Data Factory (ADF), you can use various functions to derive new columns or transform existing ones. These functions are typically utilized within Data Flow activities when defining expressions for derived columns. Here are some commonly used ADF functions for column derivation:
+
+1. **concat():** Concatenates two or more strings together.
+
+2. **substring():** Extracts a substring from a given string based on start index and length.
+
+3. **trim():** Removes leading and trailing spaces from a string.
+
+4. **upper():** Converts a string to uppercase.
+
+5. **lower():** Converts a string to lowercase.
+
+6. **replace():** Replaces occurrences of a substring with another substring within a given string.
+
+7. **split():** Splits a string into an array of substrings based on a delimiter.
+
+8. **length():** Returns the length of a string.
+
+9. **isNull():** Checks if a column value is null and returns a default value if true.
+
+10. **coalesce():** Returns the first non-null value from a list of columns.
+
+11. **ifNull():** Returns a specified value if the column is null.
+
+12. **iif():** Evaluates an expression and returns one of two values based on the result.
+
+13. **year(), month(), day():** Extracts the year, month, or day from a date.
+
+14. **dateAdd():** Adds a specified number of days, months, or years to a date.
+
+15. **dateDiff():** Calculates the difference between two dates in days, months, or years.
+
+16. **toDate():** Converts a string or numeric value to a date.
+
+17. **toString():** Converts a numeric value or date to a string.
+
+18. **int(), float(), decimal():** Converts a string to an integer, float, or decimal data type.
+
+19. **trimStart(), trimEnd():** Removes leading or trailing spaces from a string.
+
+20. **startsWith(), endsWith():** Checks if a string starts or ends with a specific substring.
+
+These are just some of the functions available in ADF for column derivation. You can combine these functions and use conditional statements to perform complex transformations on your data within Data Flows. Remember to refer to the official Azure Data Factory documentation for the most up-to-date and comprehensive list of functions and their syntax.
+
