@@ -43,7 +43,7 @@
 				"     ignoreNoFilesFound: false) ~> HumanTissueData",
 				"HumanTissueData filter(Tissue !='cervix' && {Cell type} == 'glandular cells') ~> BoneMarrowTissue",
 				"BoneMarrowTissue aggregate(groupBy(Tissue),",
-				"     {Gene name} = count({Gene name})) ~> aggregate1",
+				"     Level = count(Level)) ~> aggregate1",
 				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['output'],",
