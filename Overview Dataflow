@@ -71,3 +71,27 @@ In Azure Data Factory (ADF), you can use various functions to derive new columns
 
 These are just some of the functions available in ADF for column derivation. You can combine these functions and use conditional statements to perform complex transformations on your data within Data Flows. Remember to refer to the official Azure Data Factory documentation for the most up-to-date and comprehensive list of functions and their syntax.
 
+
+
+Aggregate Trnasformation
+In Azure Data Factory (ADF) Data Flow, the Aggregate transformation is used to perform group-based calculations on data. 
+It allows you to group rows based on one or more columns and apply various aggregate functions to calculate values within each group.
+The possible aggregate functions that can be implemented in a row using the Aggregate transformation in ADF Data Flow:
+
+Sum: Calculates the sum of values within a group.
+Count: Counts the number of rows within a group.
+Average: Calculates the average of values within a group.
+Minimum (Min): Finds the minimum value within a group.
+Maximum (Max): Finds the maximum value within a group.
+First: Retrieves the first value within a group.
+Last: Retrieves the last value within a group.
+Count Distinct: Counts the number of distinct values within a group.
+Standard Deviation (StDev): Calculates the standard deviation within a group.
+Variance: Calculates the variance within a group.
+Approximate Count Distinct: Approximate count of distinct values within a group.
+Approximate Sum: Approximate sum of values within a group.
+Approximate Average: Approximate average of values within a group.
+
+
+To implement these functions in a row, you need to configure the Aggregate transformation in ADF Data Flow and define the group-by columns 
+reand the corresponding aggregate functions for each column. The output will contain one row per group with the aggregated results.
