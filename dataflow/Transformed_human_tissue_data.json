@@ -9,7 +9,7 @@
 						"referenceName": "human_tissue_df_ds",
 						"type": "DatasetReference"
 					},
-					"name": "HumanTissueData"
+					"name": "HumanTissueDataSource"
 				}
 			],
 			"sinks": [
@@ -26,10 +26,7 @@
 					"name": "BoneMarrowTissue"
 				},
 				{
-					"name": "aggregate1"
-				},
-				{
-					"name": "TissueWiselevel"
+					"name": "TissueWiselevelWindow"
 				}
 			],
 			"scriptLines": [
@@ -43,14 +40,12 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> HumanTissueData",
-				"TissueWiselevel filter(Tissue !='cervix' && {Cell type} == 'glandular cells') ~> BoneMarrowTissue",
-				"BoneMarrowTissue aggregate(groupBy(Tissue = ERROR_FUNCTION('')),",
-				"     Level = count(Level)) ~> aggregate1",
-				"HumanTissueData window(over(Tissue),",
+				"     ignoreNoFilesFound: false) ~> HumanTissueDataSource",
+				"TissueWiselevelWindow filter(Tissue !='cervix' && {Cell type} == 'glandular cells') ~> BoneMarrowTissue",
+				"HumanTissueDataSource window(over(Tissue),",
 				"     asc(Level, true),",
-				"     {Tissues Level} = count(Level)) ~> TissueWiselevel",
-				"aggregate1 sink(allowSchemaDrift: true,",
+				"     {Tissues Level} = count(Level)) ~> TissueWiselevelWindow",
+				"BoneMarrowTissue sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['output'],",
 				"     umask: 0022,",
