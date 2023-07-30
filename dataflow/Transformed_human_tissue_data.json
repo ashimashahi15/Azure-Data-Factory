@@ -27,6 +27,9 @@
 				},
 				{
 					"name": "aggregate1"
+				},
+				{
+					"name": "TissueWiselevel"
 				}
 			],
 			"scriptLines": [
@@ -41,9 +44,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> HumanTissueData",
-				"HumanTissueData filter(Tissue !='cervix' && {Cell type} == 'glandular cells') ~> BoneMarrowTissue",
-				"BoneMarrowTissue aggregate(groupBy(Tissue),",
+				"TissueWiselevel filter(Tissue !='cervix' && {Cell type} == 'glandular cells') ~> BoneMarrowTissue",
+				"BoneMarrowTissue aggregate(groupBy(Tissue = ERROR_FUNCTION('')),",
 				"     Level = count(Level)) ~> aggregate1",
+				"HumanTissueData window(over(Tissue),",
+				"     asc(Level, true),",
+				"     {Tissues Level} = count(Level)) ~> TissueWiselevel",
 				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['output'],",
