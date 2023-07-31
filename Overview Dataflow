@@ -69,7 +69,9 @@ In Azure Data Factory (ADF), you can use various functions to derive new columns
 
 20. **startsWith(), endsWith():** Checks if a string starts or ends with a specific substring.
 
-These are just some of the functions available in ADF for column derivation. You can combine these functions and use conditional statements to perform complex transformations on your data within Data Flows. Remember to refer to the official Azure Data Factory documentation for the most up-to-date and comprehensive list of functions and their syntax.
+These are just some of the functions available in ADF for column derivation. 
+You can combine these functions and use conditional statements to perform complex transformations on your data within Data Flows. 
+Remember to refer to the official Azure Data Factory documentation for the most up-to-date and comprehensive list of functions and their syntax.
 
 
 
@@ -95,3 +97,10 @@ Approximate Average: Approximate average of values within a group.
 
 To implement these functions in a row, you need to configure the Aggregate transformation in ADF Data Flow and define the group-by columns 
 reand the corresponding aggregate functions for each column. The output will contain one row per group with the aggregated results.
+
+
+Conditional Split Transformation
+The conditional split transformation routes data rows to different streams based on matching conditions. 
+The conditional split transformation is similar to a CASE decision structure in a programming language. 
+The transformation evaluates expressions, and based on the results, directs the data row to the specified stream.
+
